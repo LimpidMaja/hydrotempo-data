@@ -1,0 +1,7 @@
+live/
+site/
+last.tar.gz
+.cache/
+.venv/
+__pycache__/
+.DS_Store

@@ -1,0 +1,80 @@
+name: Live data
+
+# Fetches Hydrotempo's live water data and publishes it on this repository's Pages site
+# (https://limpidmaja.github.io/hydrotempo-data/): the files under live/, and all of them as live.tar.gz for the
+# site's daily build. Each run starts from the last published data, so a product that fails keeps its last good
+# values with their real times.
+#
+# Safety, as this repository is public: it runs only on its schedule or by hand (never on pull requests, so a fork's
+# code never runs with the secrets), the logins are given to the one step that needs them, the actions are pinned to
+# exact commits, and only the live/ folder is published.
+on:
+  schedule:
+    # After the wave model's 12 UTC run is out, as the site's data job ran before (13:23 UTC).
+    - cron: '23 13 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  issues: write
+
+concurrency:
+  group: data
+  cancel-in-progress: false
+
+env:
+  SITE: https://limpidmaja.github.io/hydrotempo-data
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    # Measured on 4 November 2026: about 7 minutes (places 1.5, globe sea temperature 4, globe waves 1.5).
+    timeout-minutes: 30
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - run: pip install -r requirements.txt
+      - name: Restore the last published data
+        run: |
+          if curl -fsSL --retry 3 "$SITE/live.tar.gz" -o last.tar.gz; then tar xzf last.tar.gz; else mkdir -p live; fi
+      - name: Fetch and validate
+        id: fetch
+        env:
+          COPERNICUSMARINE_SERVICE_USERNAME: ${{ secrets.COPERNICUSMARINE_SERVICE_USERNAME }}
+          COPERNICUSMARINE_SERVICE_PASSWORD: ${{ secrets.COPERNICUSMARINE_SERVICE_PASSWORD }}
+          CDSE_USERNAME: ${{ secrets.CDSE_USERNAME }}
+          CDSE_PASSWORD: ${{ secrets.CDSE_PASSWORD }}
+        run: python -I scripts/fetch.py live
+      - name: Build the Pages site
+        # Runs even when one product failed: the others' fresh values and the kept ones are published.
+        if: always() && hashFiles('live/conditions.json') != ''
+        run: |
+          mkdir -p site
+          cp -r live site/live
+          tar czf site/live.tar.gz live
+          cp README.md site/README.md
+          printf '<!doctype html><meta charset="utf-8"><title>Hydrotempo live data</title><p>Live water data for <a href="https://hydrotempo.com/">hydrotempo.com</a>. Sources, licences and credits: <a href="https://github.com/LimpidMaja/hydrotempo-data">README</a> and <a href="live/conditions.json">live/conditions.json</a>.</p>\n' > site/index.html
+          touch site/.nojekyll
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        if: always() && hashFiles('live/conditions.json') != ''
+        with:
+          path: site
+          retention-days: 1
+      - id: deployment
+        if: always() && hashFiles('live/conditions.json') != ''
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+      - name: Open an issue when a product fails
+        if: failure() && steps.fetch.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create --title "Data job: a product failed" --body "The daily data job failed validation or could not reach a source for at least one product. The last good values were kept with their real times. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

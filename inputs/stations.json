@@ -1,0 +1,579 @@
+{
+ "stations": [
+  {
+   "id": "mississippi-st-louis",
+   "provider": "usgs",
+   "providerId": "USGS-07010000",
+   "river": "mississippi",
+   "lat": 38.629,
+   "lon": -90.1797777777778,
+   "tz": "CST",
+   "drainageArea": {
+    "value": 697000.0,
+    "unit": "mi2",
+    "km2": 1805222
+   },
+   "datum": {
+    "elevation": 379.58,
+    "unit": "ft",
+    "vertical": "NAVD88"
+   },
+   "series": {
+    "parameter": "00060",
+    "statistic": "00003",
+    "variable": "discharge",
+    "aggregation": "daily mean",
+    "unit": "ft3/s"
+   },
+   "url": "https://waterdata.usgs.gov/monitoring-location/07010000/",
+   "providerName": "Mississippi River at St. Louis, MO",
+   "name": "Mississippi River at St. Louis"
+  },
+  {
+   "id": "missouri-hermann",
+   "provider": "usgs",
+   "providerId": "USGS-06934500",
+   "river": "missouri",
+   "lat": 38.7098055555556,
+   "lon": -91.4385,
+   "tz": "CST",
+   "drainageArea": {
+    "value": 522500.0,
+    "unit": "mi2",
+    "km2": 1353269
+   },
+   "datum": {
+    "elevation": 481.5,
+    "unit": "ft",
+    "vertical": "NAVD88"
+   },
+   "series": {
+    "parameter": "00060",
+    "statistic": "00003",
+    "variable": "discharge",
+    "aggregation": "daily mean",
+    "unit": "ft3/s"
+   },
+   "url": "https://waterdata.usgs.gov/monitoring-location/06934500/",
+   "providerName": "Missouri River at Hermann, MO",
+   "name": "Missouri River at Hermann"
+  },
+  {
+   "id": "ohio-louisville",
+   "provider": "usgs",
+   "providerId": "USGS-03294500",
+   "river": "ohio",
+   "lat": 38.2803473627806,
+   "lon": -85.7991305041063,
+   "tz": "EST",
+   "drainageArea": {
+    "value": 91170.0,
+    "unit": "mi2",
+    "km2": 236129
+   },
+   "datum": {
+    "elevation": 373.18,
+    "unit": "ft",
+    "vertical": "NGVD29"
+   },
+   "series": {
+    "parameter": "00060",
+    "statistic": "00003",
+    "variable": "discharge",
+    "aggregation": "daily mean",
+    "unit": "ft3/s"
+   },
+   "url": "https://waterdata.usgs.gov/monitoring-location/03294500/",
+   "providerName": "OHIO RIVER AT LOUISVILLE, KY",
+   "name": "Ohio River at Louisville"
+  },
+  {
+   "id": "colorado-lees-ferry",
+   "provider": "usgs",
+   "providerId": "USGS-09380000",
+   "river": "colorado",
+   "lat": 36.864333333333335,
+   "lon": -111.58787222222222,
+   "tz": "MST",
+   "drainageArea": {
+    "value": 111800.0,
+    "unit": "mi2",
+    "km2": 289561
+   },
+   "datum": {
+    "elevation": 3109.13,
+    "unit": "ft",
+    "vertical": "NAVD88"
+   },
+   "series": {
+    "parameter": "00060",
+    "statistic": "00003",
+    "variable": "discharge",
+    "aggregation": "daily mean",
+    "unit": "ft3/s"
+   },
+   "url": "https://waterdata.usgs.gov/monitoring-location/09380000/",
+   "providerName": "COLORADO RIVER AT LEES FERRY, AZ",
+   "name": "Colorado River at Lees Ferry"
+  },
+  {
+   "id": "columbia-the-dalles",
+   "provider": "usgs",
+   "providerId": "USGS-14105700",
+   "river": "columbia",
+   "lat": 45.6082777777778,
+   "lon": -121.189916666667,
+   "tz": "PST",
+   "drainageArea": {
+    "value": 237000.0,
+    "unit": "mi2",
+    "km2": 613827
+   },
+   "datum": {
+    "elevation": 0.0,
+    "unit": "ft",
+    "vertical": "NGVD29"
+   },
+   "series": {
+    "parameter": "00060",
+    "statistic": "00003",
+    "variable": "discharge",
+    "aggregation": "daily mean",
+    "unit": "ft3/s"
+   },
+   "url": "https://waterdata.usgs.gov/monitoring-location/14105700/",
+   "providerName": "COLUMBIA RIVER AT THE DALLES, OR",
+   "name": "Columbia River at The Dalles"
+  },
+  {
+   "id": "rio-grande-embudo",
+   "provider": "usgs",
+   "providerId": "USGS-08279500",
+   "river": "rio-grande",
+   "lat": 36.2055555555556,
+   "lon": -105.963972222222,
+   "tz": "MST",
+   "drainageArea": {
+    "value": 10400.0,
+    "unit": "mi2",
+    "km2": 26936
+   },
+   "datum": {
+    "elevation": 5789.14,
+    "unit": "ft",
+    "vertical": "NGVD29"
+   },
+   "series": {
+    "parameter": "00060",
+    "statistic": "00003",
+    "variable": "discharge",
+    "aggregation": "daily mean",
+    "unit": "ft3/s"
+   },
+   "url": "https://waterdata.usgs.gov/monitoring-location/08279500/",
+   "providerName": "RIO GRANDE AT EMBUDO, NM",
+   "name": "Rio Grande at Embudo"
+  },
+  {
+   "id": "hudson-green-island",
+   "provider": "usgs",
+   "providerId": "USGS-01358000",
+   "river": "hudson",
+   "lat": 42.75225,
+   "lon": -73.68908333333334,
+   "tz": "EST",
+   "drainageArea": {
+    "value": 8090.0,
+    "unit": "mi2",
+    "km2": 20953
+   },
+   "datum": {
+    "elevation": -0.92,
+    "unit": "ft",
+    "vertical": "NAVD88"
+   },
+   "series": {
+    "parameter": "00060",
+    "statistic": "00003",
+    "variable": "discharge",
+    "aggregation": "daily mean",
+    "unit": "ft3/s"
+   },
+   "url": "https://waterdata.usgs.gov/monitoring-location/01358000/",
+   "providerName": "HUDSON RIVER AT GREEN ISLAND NY",
+   "name": "Hudson River at Green Island"
+  },
+  {
+   "id": "thames-kingston",
+   "provider": "ea",
+   "providerId": "8496ce69-482c-406a-a2f0-ac418ef8f099",
+   "river": "thames",
+   "lat": 51.415482,
+   "lon": -0.307629,
+   "tz": "Europe/London",
+   "drainageArea": {
+    "value": 9948.0,
+    "unit": "km2",
+    "km2": 9948
+   },
+   "datum": null,
+   "series": {
+    "measure": "8496ce69-482c-406a-a2f0-ac418ef8f099-flow-m-86400-m3s-qualified",
+    "variable": "discharge",
+    "aggregation": "daily mean (09:00 to 09:00 GMT)",
+    "unit": "m3/s"
+   },
+   "url": "https://environment.data.gov.uk/hydrology/station/8496ce69-482c-406a-a2f0-ac418ef8f099",
+   "providerName": "River Thames at Kingston",
+   "name": "River Thames at Kingston"
+  },
+  {
+   "id": "colorado-grand-canyon",
+   "provider": "usgs",
+   "providerId": "USGS-09402500",
+   "river": "colorado",
+   "lat": 36.1013717601685,
+   "lon": -112.086279488639,
+   "tz": "MST",
+   "drainageArea": {
+    "value": 141600.0,
+    "unit": "mi2",
+    "km2": 366742
+   },
+   "datum": {
+    "elevation": 2418.7,
+    "unit": "ft",
+    "vertical": "NGVD29"
+   },
+   "series": {
+    "parameter": "00060",
+    "statistic": "00003",
+    "variable": "discharge",
+    "aggregation": "daily mean",
+    "unit": "ft3/s"
+   },
+   "url": "https://waterdata.usgs.gov/monitoring-location/09402500/",
+   "providerName": "COLORADO RIVER NEAR GRAND CANYON, AZ",
+   "name": "Colorado River near Grand Canyon"
+  },
+  {
+   "id": "missouri-bismarck",
+   "provider": "usgs",
+   "providerId": "USGS-06342500",
+   "river": "missouri",
+   "lat": 46.814167,
+   "lon": -100.821389,
+   "tz": "CST",
+   "drainageArea": {
+    "value": 186400.0,
+    "unit": "mi2",
+    "km2": 482774
+   },
+   "datum": {
+    "elevation": 1619.64,
+    "unit": "ft",
+    "vertical": "NAVD88"
+   },
+   "series": {
+    "parameter": "00060",
+    "statistic": "00003",
+    "variable": "discharge",
+    "aggregation": "daily mean",
+    "unit": "ft3/s"
+   },
+   "url": "https://waterdata.usgs.gov/monitoring-location/06342500/",
+   "providerName": "MISSOURI RIVER AT BISMARCK, ND",
+   "name": "Missouri River at Bismarck"
+  },
+  {
+   "id": "rio-grande-otowi",
+   "provider": "usgs",
+   "providerId": "USGS-08313000",
+   "river": "rio-grande",
+   "lat": 35.8745,
+   "lon": -106.14244444444445,
+   "tz": "MST",
+   "drainageArea": {
+    "value": 14300.0,
+    "unit": "mi2",
+    "km2": 37037
+   },
+   "datum": {
+    "elevation": 5491.66,
+    "unit": "ft",
+    "vertical": "NAVD88"
+   },
+   "series": {
+    "parameter": "00060",
+    "statistic": "00003",
+    "variable": "discharge",
+    "aggregation": "daily mean",
+    "unit": "ft3/s"
+   },
+   "url": "https://waterdata.usgs.gov/monitoring-location/08313000/",
+   "providerName": "RIO GRANDE AT OTOWI BRIDGE, NM",
+   "name": "Rio Grande at Otowi Bridge"
+  },
+  {
+   "id": "snake-anatone",
+   "provider": "usgs",
+   "providerId": "USGS-13334300",
+   "river": "snake",
+   "lat": 46.09706985232952,
+   "lon": -116.97769161095154,
+   "tz": "PST",
+   "drainageArea": {
+    "value": 92960.0,
+    "unit": "mi2",
+    "km2": 240765
+   },
+   "datum": {
+    "elevation": 810.35,
+    "unit": "ft",
+    "vertical": "NAVD88"
+   },
+   "series": {
+    "parameter": "00060",
+    "statistic": "00003",
+    "variable": "discharge",
+    "aggregation": "daily mean",
+    "unit": "ft3/s"
+   },
+   "url": "https://waterdata.usgs.gov/monitoring-location/13334300/",
+   "providerName": "SNAKE RIVER NEAR ANATONE, WA",
+   "name": "Snake River near Anatone"
+  },
+  {
+   "id": "red-river-index",
+   "provider": "usgs",
+   "providerId": "USGS-07337000",
+   "river": "red-river",
+   "lat": 33.5519444444444,
+   "lon": -94.0411111111111,
+   "tz": "CST",
+   "drainageArea": {
+    "value": 48000.0,
+    "unit": "mi2",
+    "km2": 124319
+   },
+   "datum": {
+    "elevation": 246.55,
+    "unit": "ft",
+    "vertical": "NAVD88"
+   },
+   "series": {
+    "parameter": "00060",
+    "statistic": "00003",
+    "variable": "discharge",
+    "aggregation": "daily mean",
+    "unit": "ft3/s"
+   },
+   "url": "https://waterdata.usgs.gov/monitoring-location/07337000/",
+   "providerName": "Red River at Index, AR",
+   "name": "Red River at Index"
+  },
+  {
+   "id": "sacramento-verona",
+   "provider": "usgs",
+   "providerId": "USGS-11425500",
+   "river": "sacramento",
+   "lat": 38.774322583790116,
+   "lon": -121.59825928205096,
+   "tz": "PST",
+   "drainageArea": {
+    "value": 21251.0,
+    "unit": "mi2",
+    "km2": 55040
+   },
+   "datum": {
+    "elevation": -0.9,
+    "unit": "ft",
+    "vertical": "NAVD88"
+   },
+   "series": {
+    "parameter": "00060",
+    "statistic": "00003",
+    "variable": "discharge",
+    "aggregation": "daily mean",
+    "unit": "ft3/s"
+   },
+   "url": "https://waterdata.usgs.gov/monitoring-location/11425500/",
+   "providerName": "SACRAMENTO R A VERONA CA",
+   "name": "Sacramento River at Verona"
+  },
+  {
+   "id": "potomac-little-falls",
+   "provider": "usgs",
+   "providerId": "USGS-01646500",
+   "river": "potomac",
+   "lat": 38.949777777777776,
+   "lon": -77.12763888888888,
+   "tz": "EST",
+   "drainageArea": {
+    "value": 11560.0,
+    "unit": "mi2",
+    "km2": 29940
+   },
+   "datum": {
+    "elevation": 37.04,
+    "unit": "ft",
+    "vertical": "NAVD88"
+   },
+   "series": {
+    "parameter": "00060",
+    "statistic": "00003",
+    "variable": "discharge",
+    "aggregation": "daily mean",
+    "unit": "ft3/s"
+   },
+   "url": "https://waterdata.usgs.gov/monitoring-location/01646500/",
+   "providerName": "POTOMAC RIVER NEAR WASH, DC LITTLE FALLS PUMP STA",
+   "name": "Potomac River at Little Falls"
+  },
+  {
+   "id": "delaware-trenton",
+   "provider": "usgs",
+   "providerId": "USGS-01463500",
+   "river": "delaware",
+   "lat": 40.2216666666667,
+   "lon": -74.7780555555556,
+   "tz": "EST",
+   "drainageArea": {
+    "value": 6780.0,
+    "unit": "mi2",
+    "km2": 17560
+   },
+   "datum": {
+    "elevation": -1.08,
+    "unit": "ft",
+    "vertical": "NAVD88"
+   },
+   "series": {
+    "parameter": "00060",
+    "statistic": "00003",
+    "variable": "discharge",
+    "aggregation": "daily mean",
+    "unit": "ft3/s"
+   },
+   "url": "https://waterdata.usgs.gov/monitoring-location/01463500/",
+   "providerName": "Delaware River at Trenton NJ",
+   "name": "Delaware River at Trenton"
+  },
+  {
+   "id": "susquehanna-harrisburg",
+   "provider": "usgs",
+   "providerId": "USGS-01570500",
+   "river": "susquehanna",
+   "lat": 40.25473717139125,
+   "lon": -76.8860537753772,
+   "tz": "EST",
+   "drainageArea": {
+    "value": 24100.0,
+    "unit": "mi2",
+    "km2": 62419
+   },
+   "datum": {
+    "elevation": 289.34,
+    "unit": "ft",
+    "vertical": "NAVD88"
+   },
+   "series": {
+    "parameter": "00060",
+    "statistic": "00003",
+    "variable": "discharge",
+    "aggregation": "daily mean",
+    "unit": "ft3/s"
+   },
+   "url": "https://waterdata.usgs.gov/monitoring-location/01570500/",
+   "providerName": "Susquehanna River at Harrisburg, PA",
+   "name": "Susquehanna River at Harrisburg"
+  },
+  {
+   "id": "connecticut-thompsonville",
+   "provider": "usgs",
+   "providerId": "USGS-01184000",
+   "river": "connecticut",
+   "lat": 41.987204616172,
+   "lon": -72.6053482565335,
+   "tz": "EST",
+   "drainageArea": {
+    "value": 9660.0,
+    "unit": "mi2",
+    "km2": 25019
+   },
+   "datum": {
+    "elevation": 27.75,
+    "unit": "ft",
+    "vertical": "NAVD88"
+   },
+   "series": {
+    "parameter": "00060",
+    "statistic": "00003",
+    "variable": "discharge",
+    "aggregation": "daily mean",
+    "unit": "ft3/s"
+   },
+   "url": "https://waterdata.usgs.gov/monitoring-location/01184000/",
+   "providerName": "CONNECTICUT RIVER AT THOMPSONVILLE, CT",
+   "name": "Connecticut River at Thompsonville"
+  },
+  {
+   "id": "brazos-richmond",
+   "provider": "usgs",
+   "providerId": "USGS-08114000",
+   "river": "brazos",
+   "lat": 29.5824589022502,
+   "lon": -95.7577275325698,
+   "tz": "CST",
+   "drainageArea": {
+    "value": 45107.0,
+    "unit": "mi2",
+    "km2": 116827
+   },
+   "datum": {
+    "elevation": 26.73,
+    "unit": "ft",
+    "vertical": "NAVD88"
+   },
+   "series": {
+    "parameter": "00060",
+    "statistic": "00003",
+    "variable": "discharge",
+    "aggregation": "daily mean",
+    "unit": "ft3/s"
+   },
+   "url": "https://waterdata.usgs.gov/monitoring-location/08114000/",
+   "providerName": "Brazos Rv at Richmond, TX",
+   "name": "Brazos River at Richmond"
+  },
+  {
+   "id": "willamette-salem",
+   "provider": "usgs",
+   "providerId": "USGS-14191000",
+   "river": "willamette",
+   "lat": 44.9442862974769,
+   "lon": -123.042874245737,
+   "tz": "PST",
+   "drainageArea": {
+    "value": 7280.0,
+    "unit": "mi2",
+    "km2": 18855
+   },
+   "datum": {
+    "elevation": 106.14,
+    "unit": "ft",
+    "vertical": "NGVD29"
+   },
+   "series": {
+    "parameter": "00060",
+    "statistic": "00003",
+    "variable": "discharge",
+    "aggregation": "daily mean",
+    "unit": "ft3/s"
+   },
+   "url": "https://waterdata.usgs.gov/monitoring-location/14191000/",
+   "providerName": "WILLAMETTE RIVER AT SALEM, OR",
+   "name": "Willamette River at Salem"
+  }
+ ]
+}

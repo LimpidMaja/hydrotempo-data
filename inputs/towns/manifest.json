@@ -1,0 +1,176 @@
+{
+ "release": "towns",
+ "note": "Coastal towns for the globe's search, each with the model cells its values are read at (rule D14). Built by scripts/data/places/towns.py from GeoNames cities1000 (CC BY 4.0).",
+ "fields": [
+  "geonameid",
+  "name",
+  "country",
+  "admin1",
+  "oceanLat",
+  "oceanLon",
+  "oceanKm",
+  "wavesLat",
+  "wavesLon",
+  "page",
+  "via",
+  "viaKm"
+ ],
+ "minPopulation": 1000,
+ "rule": "D14, as scripts/data/places/build.py",
+ "inputs": {
+  "geonames/cities1000.txt": "60a62c2e0041c4cfcc5a30e49eee5e0e93419888fca1018ea225d886e9db7441",
+  "geonames/admin1CodesASCII.txt": "2e4867f5397acb056ea26377601b57af37cb4c81399770225018e9e439e91ad3",
+  "natural-earth/ne_10m_land.geojson": "1ac90796408bc6ad6911d69448485d3c4dbf2190370080368a09976e1c9f7416",
+  "cmems/static-phy.nc": "372d72f4ded0060003157c74217e5eff6d4773f9d8fd7880ba5e015638aa962f",
+  "cmems/static-wav.nc": "62d261a4a896398ddffcba817644c06fcdc44ee0abb349a254e80c5b7e87705b"
+ },
+ "shards": [
+  "_",
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z"
+ ],
+ "files": [
+  {
+   "path": "admin1.json",
+   "sha256": "f4b133ec1f3700262912d696f5317d4e2b2a3697d55cec7e41d8ea11c3935b41"
+  },
+  {
+   "path": "near.json",
+   "sha256": "33979a000e713c924d9306c9fc012b6635c1a62ccac0f5ba3ffb11ed78d3a427"
+  },
+  {
+   "path": "_.json",
+   "sha256": "9cd7d000df7058ddadf68ff83fed20615e31f7d533960119bbd8e83ad118b4fa"
+  },
+  {
+   "path": "a.json",
+   "sha256": "6a1625bc31681080b8f3d8813463fdaf6a1ba6f266d525cc52c0151390bd867a"
+  },
+  {
+   "path": "b.json",
+   "sha256": "79b971dacf8b6bfe4df1ed5c5fd2ec66235f977f1d5a57b900df1e69a80df64a"
+  },
+  {
+   "path": "c.json",
+   "sha256": "b12da0728e4881207a33e8d0cd8ab4007667238a4eb7655a1450c5ee5b501ebe"
+  },
+  {
+   "path": "d.json",
+   "sha256": "85b273b3e5ba425ea960ceaad0facf70f9936f9af4a7e3035e0680bfde856e0e"
+  },
+  {
+   "path": "e.json",
+   "sha256": "310899ba4e8cb476982c4d0b5c2ed7b1675796be1c712d07be280a695369cccd"
+  },
+  {
+   "path": "f.json",
+   "sha256": "90c4a2d2f778f50a240c9bfa39b00f25ebe8ea1acc936418ffe230f166b31952"
+  },
+  {
+   "path": "g.json",
+   "sha256": "9255fdcb2fb2fab0048e0dceb4b43be8a398e07cc7c4fe9069986f98bbd04f7c"
+  },
+  {
+   "path": "h.json",
+   "sha256": "92547e075b7005f26a883b0e1f526518abb98d83c40203d1f3d20491bcf63465"
+  },
+  {
+   "path": "i.json",
+   "sha256": "ffbaf598af7e5b06d95182f17c1c60081dd032d297d4684b81420d8775e11f2d"
+  },
+  {
+   "path": "j.json",
+   "sha256": "4943ef4757279503efb71afbaac9a239d064f64ca8319b5fb5c48296deb651b6"
+  },
+  {
+   "path": "k.json",
+   "sha256": "70842d20fe21c9890f59db3707e3c7c03d8a1e303b8da6676b08c54802e5cfc1"
+  },
+  {
+   "path": "l.json",
+   "sha256": "a9b737347cae0380dc9d2765beda0766b660df738fee04484fc5cc0d938a0a76"
+  },
+  {
+   "path": "m.json",
+   "sha256": "9ac5805feeed30ebb79cf706e905047f10fa7a821322fe47a54f115a3acc3d12"
+  },
+  {
+   "path": "n.json",
+   "sha256": "069396b66bed944b399ef98bb97ec1c2c7f8af6cfc9dac23e870802babd3e10e"
+  },
+  {
+   "path": "o.json",
+   "sha256": "957f9c55ac44f3e875f8dc80a367f8af543807425c6da02966e87394280abd76"
+  },
+  {
+   "path": "p.json",
+   "sha256": "e2914d3d023c6c8abb1edfc90a093dddaa76f8f163a68a112d5990ba33ed3379"
+  },
+  {
+   "path": "q.json",
+   "sha256": "badbc2e83269f9c749a8c4f7b7bc8924cf61d813794efb67c8f4682f44ad0763"
+  },
+  {
+   "path": "r.json",
+   "sha256": "259e265ec9797dd2b1c886553b8635ee048fe65d99fffe24a8355187f0677c27"
+  },
+  {
+   "path": "s.json",
+   "sha256": "caede9e4cd0998ca92671a334d1a10a125c3e6e90e0af7101d63fd5efda88d1a"
+  },
+  {
+   "path": "t.json",
+   "sha256": "377fd2446f7ffdf1c9911c4d1792beb512a3f18cc582160abdd7db9a7985cfd1"
+  },
+  {
+   "path": "u.json",
+   "sha256": "f3e638ef2ada5d15bdad23ebfab18646a87bad62c6399a0df658e8060e7b340e"
+  },
+  {
+   "path": "v.json",
+   "sha256": "f5e0d163761259558948eed8a17769072e047ebad59a3c5ee5ccb69c535f6472"
+  },
+  {
+   "path": "w.json",
+   "sha256": "2fd404c6501cee4f228213510289802b649672e1d82d3809e8c657deac386448"
+  },
+  {
+   "path": "x.json",
+   "sha256": "66d01dd6784118b055fe0d82491bab5f0a9fff8fee2622afb5c1c850ca717cbc"
+  },
+  {
+   "path": "y.json",
+   "sha256": "f3cabaf24f6b573a53818fa148e33d127715d4c7113d6a2c7aba1e0efe4ed95a"
+  },
+  {
+   "path": "z.json",
+   "sha256": "1888b468b2c4a442c4b6084e11206082c233b28b2823b5de86b5f99a806f2dc8"
+  }
+ ],
+ "count": 20101,
+ "withCell": 14416
+}

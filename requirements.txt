@@ -1,0 +1,13 @@
+# The daily job's Python environment. Exact versions, upgraded deliberately (the same as the site's
+# scripts/data/requirements.txt, without the packages only its one-off builds use).
+#   python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+copernicusmarine==2.5.1
+xarray==2026.9.0
+numpy==2.5.4
+pandas==3.1.0
+dask==2026.8.0
+zarr==3.4.2
+h5netcdf==1.8.2
+pillow==13.0.0
+shapely==2.1.2
+certifi==2026.10.23
