@@ -36,7 +36,8 @@ Setting the logins: `python3 -I scripts/set-secrets.py` copies them from this Ma
 and `scripts/lakes/cdse_login.sh` write) into the `github-pages` environment's secrets, without showing them.
 
 Safety: the job runs only on its schedule or by hand, never on pull requests, so code from a fork never runs with the
-logins. The logins are repository secrets given only to the fetch step, and the scripts never print them.
+logins. The logins are secrets of the `github-pages` environment, which only `main` can use, given only to the fetch
+step, and the scripts never print them.
 
 Run locally: `python3 -m venv .venv && .venv/bin/pip install -r requirements.txt`, then
 `.venv/bin/python -I scripts/fetch.py live` with `COPERNICUSMARINE_SERVICE_USERNAME`, `COPERNICUSMARINE_SERVICE_PASSWORD`
