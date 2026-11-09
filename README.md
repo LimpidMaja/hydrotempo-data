@@ -32,6 +32,9 @@ How the job behaves:
 - The places, gauges, lakes and towns to sample are the site's registries, copied into `inputs/` from the site's
   repository by its `scripts/dev/sync-data-inputs.mjs`.
 
+Setting the logins: `python3 -I scripts/set-secrets.py` copies them from this Mac (the files `copernicusmarine login`
+and `scripts/lakes/cdse_login.sh` write) into the `github-pages` environment's secrets, without showing them.
+
 Safety: the job runs only on its schedule or by hand, never on pull requests, so code from a fork never runs with the
 logins. The logins are repository secrets given only to the fetch step, and the scripts never print them.
 
