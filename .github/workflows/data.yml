@@ -32,9 +32,10 @@ jobs:
     runs-on: ubuntu-latest
     # Measured on 4 November 2026: about 7 minutes (places 1.5, globe sea temperature 4, globe waves 1.5).
     timeout-minutes: 30
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    # The logins are secrets of this environment, which only main can use.
+    environment: github-pages
+    outputs:
+      built: ${{ steps.site.outputs.built }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
@@ -56,6 +57,7 @@ jobs:
         run: python -I scripts/fetch.py live
       - name: Build the Pages site
         # Runs even when one product failed: the others' fresh values and the kept ones are published.
+        id: site
         if: always() && hashFiles('live/conditions.json') != ''
         run: |
           mkdir -p site
@@ -64,17 +66,29 @@ jobs:
           cp README.md site/README.md
           printf '<!doctype html><meta charset="utf-8"><title>Hydrotempo live data</title><p>Live water data for <a href="https://hydrotempo.com/">hydrotempo.com</a>. Sources, licences and credits: <a href="https://github.com/LimpidMaja/hydrotempo-data">README</a> and <a href="live/conditions.json">live/conditions.json</a>.</p>\n' > site/index.html
           touch site/.nojekyll
+          echo "built=1" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         if: always() && hashFiles('live/conditions.json') != ''
         with:
           path: site
           retention-days: 1
-      - id: deployment
-        if: always() && hashFiles('live/conditions.json') != ''
-        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
       - name: Open an issue when a product fails
         if: failure() && steps.fetch.outcome == 'failure'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh issue create --title "Data job: a product failed" --body "The daily data job failed validation or could not reach a source for at least one product. The last good values were kept with their real times. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+  # Its own job: in the same job as the upload, the deploy once looked for the artifact before it was listed (the
+  # first run, 9 November 2026).
+  deploy:
+    needs: fetch
+    if: always() && needs.fetch.outputs.built == '1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
