@@ -17,6 +17,7 @@ Rules (decision of 6 November 2026 in docs/DECISIONS.md):
 Usage, on its own: python -I scripts/lakes/recent.py [out.json]   (needs the CDSE login, see cdse.py)
 """
 
+import datetime as dt
 import json
 import pathlib
 import sys
@@ -43,6 +44,12 @@ def sample(nc: pathlib.Path, lakes: list[dict]) -> tuple[dict, dict]:
     d = xr.open_dataset(nc, mask_and_scale=True)
     lat, lon = d["lat"].values, d["lon"].values
     day_bits = int(np.sum(d["time_obs"].attrs["flag_masks"]))
+    # The file documents eleven day flags (obs_day1 to obs_day11, for the longest window) whatever its own window, and
+    # a few pixels of a 10-day window carry the eleventh (Huron, Ontario and Onega in 1 to 10 November 2026): only the
+    # window's own days count, so a lake never reports more clear days than its window has.
+    a, b = d.attrs["time_coverage_start"], d.attrs["time_coverage_end"]
+    window_days = (dt.date(int(b[:4]), int(b[4:6]), int(b[6:8])) - dt.date(int(a[:4]), int(a[4:6]), int(a[6:8]))).days + 1
+    day_bits &= (1 << window_days) - 1
     out, none = {}, {}
     for lake in lakes:
         g = shape(lake["outline"])
