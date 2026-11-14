@@ -90,11 +90,16 @@ def sample(nc: pathlib.Path, lakes: list[dict]) -> tuple[dict, dict]:
     return out, none
 
 
+# How the values are worked out: a result made by an older method is computed again, even for the same composite (2:
+# only the window's own day flags count).
+METHOD = 2
+
+
 def recent(prev: dict | None = None) -> dict:
     newest = cdse.search(NAME, SUFFIX, 1)[0]
     lakes = json.loads((pathlib.Path(__file__).resolve().parents[2] / "inputs/lakes.json").read_text())["lakes"]
     # The same composite is kept as it was, unless lakes were added since: every lake needs a value or a reason.
-    if prev and prev.get("product") == newest["Name"] and {l["id"] for l in lakes} <= set(prev.get("lakes", {})) | set(prev.get("none", {})):
+    if prev and prev.get("product") == newest["Name"] and prev.get("method") == METHOD and {l["id"] for l in lakes} <= set(prev.get("lakes", {})) | set(prev.get("none", {})):
         return prev
     z = cdse.download(newest, CACHE / f"{newest['Name']}.zip")
     with tempfile.TemporaryDirectory() as tmp, zipfile.ZipFile(z) as zf:
@@ -108,6 +113,7 @@ def recent(prev: dict | None = None) -> dict:
     return {
         "dataset": DATASET,
         "product": newest["Name"],
+        "method": METHOD,
         "version": attrs.get("product_version"),
         # The window's first and last day (the composite's time_coverage_end is the last day at 00 UTC).
         "window": {"start": f"{start[:4]}-{start[4:6]}-{start[6:8]}", "end": f"{end[:4]}-{end[4:6]}-{end[6:8]}"},
